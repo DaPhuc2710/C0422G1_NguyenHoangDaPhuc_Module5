@@ -1,0 +1,80 @@
+  1. Typescript là gì? Ưu điểm của Typescript:
++Mọi chương trình JavaScript đều là một chương trình TypeScript
+
++Do đó TypeScript vẫn tuân thủ cách đặt biến giống như JavaScript.
+
++Biến trong TypeScript vẫn được khai báo bởi các từ khoá như var, let và const.
+  2. Các kiểu dữ liệu trong Typescript?
+-TypeScript hỗ trợ tất cả các kiểu dữ liệu của JavaScript và bổ sung thêm một số kiểu dữ liệu mới 
+-Các kiểu mới :
+
++Boolean
+Với những dữ liệu có giá trị trả về là true/false thì TypeScript cung cấp cho ta kiểu dữ liệu boolean để lưu trữ chúng.
+VD: let isShow: boolean = true
+
++Number
+Cũng giống như JavaScript tất cả số trong TypeScript đều là số thực và được lưu trữ với kiểu dữ liệu là number.
+ Ngoài ra cũng có thể khai báo dữ liệu dạng số thập phân, hệ thập lục phân, hệ nhị phân và hệ bát phân.
+VD:
+let decimal: number = 10;
+
+let hex: number = 0xf00d;
+
+let binary: number = 0b1010;
+
+let octal: number = 0o744;
+
++String
+Để lưu trữ dữ liệu dạng chuỗi trong TypeScript lập trình viên có thể khai báo kiểu dữ liệu string
+VD: let x = 'CodeGym'
+
+Array
+Cũng như JavaScript, Typescript cho phép làm việc với mảng các giá trị. Array có thể được khai báo bằng hai cách:
+VD:
+let list: number[] = [1, 2, 3, 4, 5];
+let list: Array<number> = [1, 2, 3, 4, 5];
+
+Enum
+Enum được sử dụng để cho phép một biến có thể là một tập hợp các hằng số được định sẵn.
+VD:
+enum City {HaNoi, HoChiMinh, DaNang};
+let city: City = City.HaNoi;
+
+Tuple
+Kiểu dữ liệu Tuple cho phép khai báo mảng với các giá trị có kiểu dữ liệu đã biết.
+VD:
+// Khai báo kiểu dữ liệu Tuple
+let x: [string, number];
+// Khởi tạo dữ liệu cho kiểu Tuple
+x = ["CodeGym", 2021]; // Đúng
+x = [2021, "CodeGym"]; // Sai
+
+Any
+Kiểu dữ liệu any giúp LTV có thể giải quyết được vấn đề không biết chắc chắn kiểu dữ liệu của nó.
+
+VD:
+let x: any = 2021;
+
+x = 'CodeGym';
+
+x = true;
+
+x = {
+
+  id: 1,
+
+  name: 'CodeGym'
+
+};
+
+3. Cú pháp và cách sử dụng các hàm map, filter, foreach?
+
+
+4.Các cách xử lý bất đồng bộ trong Javascript 
+Promise là 1 cơ chế trong JavaScript giúp thực thi các tác vụ bất đồng bộ.
+
+Khi một Promise được khởi tạo thì nó có một trong ba trạng thái sau:
+
+Fulfilled: hành động xử lý xong và thành công
+Rejected: hành động xử lý xong và thất bại
+Pending: hành động đang chờ xử lý hoặc bị từ chối 
