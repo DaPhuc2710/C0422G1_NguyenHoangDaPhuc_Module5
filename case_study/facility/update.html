@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    #navbar {
+        background: linear-gradient(to right, #3d7eaa, #ffe47a);
+    }
+
+    .text_nav {
+        font-family: cursive;
+        font-size: 18px;
+    }
+
+    button {
+        font-family: cursive;
+    }
+
+    p {
+        font-family: cursive;
+    }
+
+    .bg_all {
+        background: linear-gradient(to right, #3d7eaa, #ffe47a);
+    }
+
+    span {
+        color: white;
+        font-family: cursive;
+        font-size: 18px;
+    }
+
+    .text_foot {
+        font-family: cursive;
+        color: grey;
+    }
+
+    h2 {
+        font-family: "Sofia", sans-serif;
+    }
+    #img_bg {
+        background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+        background-position: right bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: 15;
+    }
+</style>
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+</head>
+<body>
+<nav id="navbar" class="navbar navbar-expand-lg  bg-success p-0 ">
+    <div class="col-1"></div>
+    <div class="col-1"><img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" width="45px">
+    </div>
+    <div class="col-6">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="col-1">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light text_nav" aria-current="page" href="/">Home</a>
+                    </li>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown2"
+                           role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Employee
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item text_nav" href="/listEmployee">List Employee</a></li>
+                            </a></li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <li class="nav-item dropdown">
+                        <a class="text_nav nav-link dropdown-toggle text-light" href="#" id="navbarDropdown1"
+                           role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Customer
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item text_nav" href="/listCustomer">List</a></li>
+                            <li><a class="dropdown-item text_nav" href="/customerAdd">
+                                Add New Customer
+                            </a></li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="col-1"></div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Service
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text_nav" href="/listFacility">List</a></li>
+                        <li><a class="dropdown-item text_nav" href="/addFacility">
+                            Add New Service
+                        </a></li>
+                    </ul>
+                </li>
+                <div class="col-1">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light text_nav" href="#" id="navbarDropdown3"
+                           role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <li><a class="dropdown-item text_nav" href="/listContract">List Contact</a></li>
+                            <li><a class="dropdown-item text_nav" href="contact/add_new_contact.jsp">
+                                Add New Contact
+                            </a></li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="col-3">
+        <form class="d-flex">
+            <input class="form-control me-2 mt-3 rounded-end  " type="search" placeholder="Search"
+                   aria-label="Search"
+                   width="100%">
+            <button class="btn btn-outline-success mt-3" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="col-1"></div>
+</nav>
+
+<div id="img_bg">
+    <h2 style="text-align: center;">Update Facility</h2>
+    <form class="w-50 container-fluid mt-3 shadow bg-light">
+        <div class="row">
+            <div class="mb-3">
+                <label class="form-label mt-3 text-success fw-bold">Chọn dịch vụ</label>
+                <select onchange="serviceInput()" id="select" name="service"
+                        class="form-control">
+                    <option value="0">None</option>
+                    <option value="2">House</option>
+                    <option value="3">Room</option>
+                    <option value="1">Villa</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label text-success fw-bold">Tên dịch vụ</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-success fw-bold">Diện tích sử dụng</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label text-success fw-bold">Chi phí thuê</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label text-success fw-bold">Số lượng người tối đa</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-success fw-bold">Kiểu thuê</label>
+                    <select class="form-control">
+                        <option>Tháng</option>
+                        <option>Năm</option>
+                        <option>Giờ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div></div>
+                <div class="mb-3" id="s1" style="display: none ">
+                    <label class="form-label text-success fw-bold">Tiêu chuẩn phòng</label>
+                    <input type="text"  id="s1Input" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" id="s4" style="display: none ">
+                    <label class="form-label text-success fw-bold">Mô tả tiện nghi khác</label>
+                    <input id="s4Input" type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" id="s3" style="display: none ">
+                    <label class="form-label text-success fw-bold">Diện tích hồ bơi</label>
+                    <input type="text" id="s3Input" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" id="s2" style="display: none ">
+                    <label class="form-label text-success fw-bold">Số tầng</label>
+                    <input type="text"  id="s2Input" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" id="s5" style="display: none ">
+                    <label class="form-label text-success fw-bold">Dịch vụ miễn phí đi kèm</label>
+                    <input id="s5Input" type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="bg_all d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Company name
+                    </h6>
+                    <p class="text_foot">
+                        The luxurious Furama Resort Danang is a true icon of Vietnam tourism. This 5-star haven on
+                        world-famous Da Nang beach is celebrated as Vietnam's most prestigious resort – counting
+                        royalty, presidents, movie stars and international business leaders among its celebrity guests.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text_foot">
+                        Products
+                    </h6>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset">Villa</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset ">House</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset">Room</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset ">Other</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text_foot">
+                        Useful links
+                    </h6>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset ">Pricing</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset">Settings</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset">Orders</a>
+                    </p>
+                    <p class="text_foot">
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p class="text_foot"><i class="fas fa-home me-3 "></i> 103 - 105 Vo Nguyen Giap Street, Khue My
+                        Ward, Ngu Hanh Son
+                        District, Danang City, Vietnam<br>
+                    </p>
+                    <p class="text_foot">
+                        <i class="fas fa-envelope me-3 "></i>
+                        reservation@furamavietnam.com
+                    </p>
+                    <p class="text_foot"><i class="fas fa-phone me-3 "></i> 84-236-3847 333</p>
+                    <p class="text_foot"><i class="fas fa-print me-3 "></i> 84-236-3847 666</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">https://furamavietnam.com/vi/</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="../js/all.min.js"></script>
+<script>
+    serviceInput();
+
+    function serviceInput() {
+        let type = document.getElementById("select").value;
+        console.log(type)
+        switch (type) {
+            case "1":
+                document.getElementById("s1").style.display = "block"
+                document.getElementById("s2").style.display = "block"
+                document.getElementById("s3").style.display = "block"
+                document.getElementById("s4").style.display = "block"
+                document.getElementById("s5").style.display = "none"
+                document.getElementById("s5Input").value = null;
+                break;
+            case "2":
+                document.getElementById("s1").style.display = "block"
+                document.getElementById("s2").style.display = "block"
+                document.getElementById("s3").style.display = "none"
+                document.getElementById("s3Input").value = null;
+                document.getElementById("s4").style.display = "block"
+                document.getElementById("s5").style.display = "none"
+                document.getElementById("s5Input").value = null;
+
+                break;
+            case "3":
+                document.getElementById("s1").style.display = "none"
+                document.getElementById("s1Input").value = null;
+                document.getElementById("s2").style.display = "none"
+                document.getElementById("s2Input").value = null;
+                document.getElementById("s3").style.display = "none"
+                document.getElementById("s3Input").value = null;
+                document.getElementById("s4").style.display = "none"
+                document.getElementById("s4Input").value = null;
+                document.getElementById("s5").style.display = "block"
+                break;
+            default:
+                document.getElementById("s1").style.display = "none"
+                document.getElementById("s2").style.display = "none"
+                document.getElementById("s3").style.display = "none"
+                document.getElementById("s4").style.display = "none"
+                document.getElementById("s5").style.display = "none"
+        }
+    }
+</script>
+</html>
+</body>
+</html>

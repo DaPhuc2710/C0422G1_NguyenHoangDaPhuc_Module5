@@ -1,0 +1,83 @@
+1.Angular là gì? tổng quan kiến trúc của Angular?
+
+_ Angular là một framework JavaScript và được viết bằng TypeScript. 
+Google tạo ra framework này với mục đích viết nên giao diện web (Front-end) đúng chuẩn “ít nỗ lực”.
+Không chỉ đem lại những lợi ích như một framework, mà Angular còn giữ nguyên cấu trúc như ngôn ngữ lập trình tiêu chuẩn.
+_ kiến trúc :
+Xác định bảy khối xây dựng chính của ứng dụng Angular:
+
++Modules : là các ứng dụng được lắp ráp từ nhiều module khác nhau.
+Các module trong Angular được đánh dấu với annotation @NgModule, một NgModule có các thành phần như sau:
+
+declarations: Dùng để khai báo những thành phần chúng ta sẽ dùng ở trên template (thường chủ yếu là các component, directive và pipe).
+exports: danh sách tên các module hoặc component có thể sử dụng module này
+imports: Nó là một mảng các module cần thiết để được sử dụng trong ứng dụng. Nó cũng có thể được sử dụng bởi các Component trong mảng Declarations.
+providers: Dùng để khai báo các service dùng trong toàn bộ các module của con
+bootstrap: Định nghĩa component gốc của module
+
+(2.Các thành phần của component?/ Vừa là câu 2 luôn)
++Components:1 Component thì gắn liền với View, nó định nghĩa các logic xử lý của giao diện và đi kèm với template HTML để mô tả các giao diện. 
+Có thể bố trí theo quan hệ cha-con nghĩa là View của Component này có thể gọi đến View của Component khác.
+Component có 4 phần như sau:
+Import statement
+Class
+Template
+Metadata
+
+
+
+
++Metadata
+Metadata chỉ cho Angular làm sao để xử lý class.
+Chúng ta thêm Metadata vào class sử dụng class decorator. Khi chúng ta thêm @Component decorator vào class nó sẽ trở thành component.
+
+
+(4.Databinding trong component?)
++Data Binding
+Là một cơ chế để phối hợp các phần của template với các phần của component.
+Thêm binding markup vào HTML template để cho Angular biết cách kết nối template và component.
+
+
+
+
+
+
++Directives
+Directive (chỉ thị) là một lớp và có phần khai báo metadata là @Directive. Thường thì directive sẽ nằm trong một element – hay thẻ của HTML giống như một thuộc tính bình thường.
+
+Có 3 loại directives đó là: 
+
+Component directive: chính là các component
+
+Structural directive: structural directive hay directive cấu trúc sẽ quyết định DOM element nào được thực thi.
+Các structural directive thường có dấu '*' ở trước của directive. Ví dụ điển hình của structural directive chính là *ngIf và *ngFor
+
+Attribute directive: Directive thuộc tính là các directive được sử dụng như một thuộc tính của thẻ HTML
+
+
+
++Services
+Service (dịch vụ) là một danh mục rộng bao gồm bất kỳ giá trị, hàm hoặc tính năng nào mà ứng dụng của chúng ta cần.
+
+Một số service phổ biến là: 
+logging service
+data service
+message bus
+tax calculator
+application configuration
+
+
++Dependency Injection
+ependency injection là khả năng cho phép tạo các đối tượng lớp có đầy đủ các lớp/module/service được dùng thêm đó.
+
+
+
+3.Cách tạo component trong Angular?
+Bước 1: Tạo folder profile để chứa các phần tử của một component trong thư mục src/app.
+• Bước 2: Trong folder profile, tạo mới file profile.component.ts
+• Bước 3: Thực hiện thêm các đoạn code sau vào file vừa tạo.
+• Bước 4: Thêm mới Component vừa tạo vào phần declarations
+của AppModule.
+• Bước 5: Sửa đổi template của AppComponent để hiển thị
+component vừa tạo.
+
