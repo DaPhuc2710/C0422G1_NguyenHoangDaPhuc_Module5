@@ -1,0 +1,12 @@
+<h2 class="text-center">Calculator</h2>
+<div class="text-center">
+  <input type="number" [(ngModel)]="number1">
+  <select [(ngModel)]="operators">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" [(ngModel)]="number2">
+  <h3>Kết quả là :{{Calculator(number1, number2, operators)}}</h3>
+</div>
