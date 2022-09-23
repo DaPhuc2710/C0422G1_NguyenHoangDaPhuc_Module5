@@ -81,3 +81,11 @@ của AppModule.
 • Bước 5: Sửa đổi template của AppComponent để hiển thị
 component vừa tạo.
 
++Tạo conponent với Angular CLI
+• Bước 1: Di chuyển terminal/CMD vào thư mục gốc (hoặc thư mục
+con mà bạn mong muốn đặt component ở đó) của project.
+• Bước 2: Chạy lệnh sau để generate component với Angular CLI.
+• Bước 3: Thêm mới selector của component vừa tạo vào file
+app.component.ts
+ng generate component calculator hoặc ng g c calculator
+

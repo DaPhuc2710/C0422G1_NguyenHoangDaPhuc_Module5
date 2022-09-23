@@ -1,0 +1,15 @@
+h2 {
+  color: #E0B22D;
+  font-family: 'Aclonica', serif;
+}
+
+#makeBG {
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 25;
+}
+
+

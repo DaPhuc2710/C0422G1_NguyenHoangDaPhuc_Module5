@@ -1,0 +1,92 @@
+1.Directive là gì? Các loại Directive trong Angular?
+
+Directive để thao tác, cập nhật, thêm, xóa các thành phần giao diện trên web(thao tác với các element của DOM).
+Các nút, ảnh, text box, table mà ta thấy trên website được một đối tượng DOM quản lý.
+DOM có nhiệm vụ vẽ ra các đối tượng này trên website để ta có thể thấy được.
+
+Angular Directive được chia là 3 loại gồm:
+
++Component Directive:gọi component là directive cũng được,component cho phép định nghĩa selector
+ và gọi ra như một thẻ html tag (<component-name></component-name>).
+
++Structural Directive: dùng để vẽ html, hiển thị data lên giao diện html,
+ và thay đổi cấu trúc DOM bằng việc thêm bớt các phần tử trong DOM.
+ Các structural directive thường có dấu '*' ở trước của directive.
+ Ví dụ *ngFor, *ngIf
+
++Attribute Directive:Thay đổi giao diện, tương tác của các đối tượng 
+ hoặc thay đổi directive khác hoặc thêm các thuộc tính động cho element html. 
+ Ví dụ *ngStyle
+
++Customs Directive:Ngoài các Directive có sẵn trong Angular chúng ta có thể tự tạo ra một directive riêng.
+
+2.Cú pháp của *ngFor
+Dùng để lặp lại các phần HTML cho mỗi item. Nó giống như vòng lặp for. Mỗi lần lặp nó sẽ chạy lại các đoạn code trong vòng lặp.
+
+Cú pháp:
+<html-element ngFor="let <item> of <items>;"> 
+     <html-Template></html-Template>
+</html-element>
+: là thẻ web mà ta muốn sử dụng ngFor directive
+*ngFor : dấu * tượng trưng cho cú pháp của Angular
+let of : item là giá trị hiện tại của phần tử trong mảng, items chính là mảng các phần tử.
+
+3.Cú pháp của *ngIf
+  Sử dụng ngIf để xóa hoặc thêm một phần tử trên web dựa vào điều kiện có thoả mãn hay không.
+Cú pháp:
+<p *ngIf="condition">
+    các thẻ html sẽ được hiển thị nếu điều kiện là đúng
+</p>
+
+
+
++Sử dụng phủ định trong ngIf
+<p *ngIf="!condition">
+    content to render, when the condition is false
+</p>
++Sử dụng if else trong ngIf
+<div *ngIf="condition; else elseBlock">
+    content to render, when the condition is true 
+</div>
+ 
+<ng-template #elseBlock>
+    content to render, when the condition is false 
+</ng-template>
+
+
+
++Sử dụng then else trong ngIf
+<div *ngIf="condition; then thenBlock else elseBlock"> 
+    This content is not shown
+</div>
+ 
+<ng-template #thenBlock>
+    content to render when the condition is true.
+</ng-template>
+ 
+<ng-template #elseBlock>
+    content to render when condition is false.
+</ng-template>
+
+
+
+
+4.Pipe là gì? các loại pipe trong Angular
+Pipe được sử dụng để chuyển đổi dữ liệu hiển thị lên template cho người dùng có thể hiểu được.
+
+Ví dụ là định dạng kiểu hiển thị datetime, viết hoa chữ cái, hiển thị tên thành phố, định dạng lại số hay đơn vị tiền, ...
+
+Danh sách các pipe mà Angular cung cấp mặc định:
+AsyncPipe
+DecimalPipe
+JsonPipe
+PercentPipe
+UpperCasePipe
+CurrencyPipe
+I18nPluralPipe
+KeyValuePipe
+SlicePipe
+DatePipe
+I18nSelectPipe
+LowerCasePipe
+TitleCasePipe

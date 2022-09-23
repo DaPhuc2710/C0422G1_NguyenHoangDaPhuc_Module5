@@ -11,6 +11,7 @@ import { ProductComponent } from './product/product.component';
 import { AngularCalculatorAppComponent } from './angular-calculator-app/angular-calculator-app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { AngularColorPickerAppComponent } from './angular-color-picker-app/angular-color-picker-app.component';
+import { AngularHackernewsAppComponent } from './angular-hackernews-app/angular-hackernews-app.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AngularColorPickerAppComponent } from './angular-color-picker-app/angul
     ProductComponent,
     AngularCalculatorAppComponent,
     CalculatorComponent,
-    AngularColorPickerAppComponent
+    AngularColorPickerAppComponent,
+    AngularHackernewsAppComponent
   ],
     imports: [
         BrowserModule,
