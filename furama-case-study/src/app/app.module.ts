@@ -7,6 +7,10 @@ import { ServiceAddComponent } from './conponent/service/service-add/service-add
 import { ServiceUpdateComponent } from './conponent/service/service-update/service-update.component';
 import { FooterComponent } from './conponent/footer/footer.component';
 import { HeaderComponent } from './conponent/header/header.component';
+import { CustomerListComponent } from './conponent/customer/customer-list/customer-list.component';
+import { CustomerAddComponent } from './conponent/customer/customer-add/customer-add.component';
+import { CustomerUpdateComponent } from './conponent/customer/customer-update/customer-update.component';
+import { ContractListComponent } from './conponent/contract/contract-list/contract-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { HeaderComponent } from './conponent/header/header.component';
     ServiceAddComponent,
     ServiceUpdateComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CustomerListComponent,
+    CustomerAddComponent,
+    CustomerUpdateComponent,
+    ContractListComponent
   ],
   imports: [
     BrowserModule

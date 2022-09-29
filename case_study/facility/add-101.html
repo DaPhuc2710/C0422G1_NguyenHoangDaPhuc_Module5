@@ -6,31 +6,37 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
     <style>
-        #makeBG {
-            position: absolute;
-            margin-bottom: 500px;
-        }
 
-        label {
-            color: #0c4128;
-        }
-        #headWithImg {
+        #background{
+            width: 100%;
+            height: 100vh;
             position: relative;
+        }
 
+        video {
+            filter: blur(3px);
+            width: 100%;
+        }
+
+        #create {
+            position: absolute;
+            z-index: 100;
+            height: 100%;
+        }
+
+        #form {
+            width: 100%;
         }
     </style>
 </head>
 <body>
-<div id="headWithImg">
-    <video  width="100%" muted loop autoplay>
-        <source src="../mixkit-white-sand-beach-background-1564.mp4" type="video/mp4">
-    </video>
-    <div id="makeBG">
-        <h2 class="text-center" id="textDeco"> Trang thêm mới dịch vụ</h2>
-        <form>
-            <div class="container">
-                <div class="row">
-                    <h3 class="text-center mt-5">Chọn loại dịch vụ</h3>
+<section id="background" class="container-fluid">
+    <div class="row container-fluid" id="create">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form action="" id="form">
+                <h3 class="text-center mt-5">Chọn loại dịch vụ</h3>
+                <div>
                     <select class="form-control" onchange="changeFacility()" id="selectFac">
                         <option value="0">None</option>
                         <option value="1">Villa</option>
@@ -38,68 +44,139 @@
                         <option value="3">Room</option>
                     </select>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Tên dịch vụ</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput2" class="form-label">Diện tích sử dụng</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput2">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput3" class="form-label">Chi phí thuê</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput3">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput4" class="form-label">Số lượng người tối
-                                        đa</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput4">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Kiểu thuê</label>
-                                    <select class="form-control">
-                                        <option>Tháng</option>
-                                        <option>Năm</option>
-                                        <option>Ngày</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mb-3" id="s1" style="display: none">
-                                    <label for="s1Input" class="form-label">Tiêu chuẩn phòng</label>
-                                    <input type="text" class="form-control" id="s1Input">
-                                </div>
-                                <div class="mb-3" style="display: none" id="s2">
-                                    <label for="s2Input" class="form-label">Mô tả tiện nghi khác</label>
-                                    <input type="text" class="form-control" id="s2Input">
-                                </div>
-                                <div class="mb-3" id="s3" style="display: none">
-                                    <label for="s3Input" class="form-label">Diện tích hồ bơi</label>
-                                    <input type="text" class="form-control" id="s3Input">
-                                </div>
-                                <div class="mb-3" id="s4" style="display: none">
-                                    <label for="s4Input" class="form-label">Số tầng</label>
-                                    <input type="text" class="form-control" id="s4Input">
-                                </div>
-                                <div class="mb-3" id="s5" style="display: none">
-                                    <label for="s5Input" class="form-label">Dịch vụ miễn phí đi kèm</label>
-                                    <input type="text" class="form-control" id="s5Input">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" type="submit">Lưu</button>
-                    </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label ">Tên dịch vụ</label>
+                    <input type="text" class="form-control " id="exampleFormControlInput1">
                 </div>
-            </div>
-        </form>
-    </div>
-</div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Diện tích sử dụng</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">Chi phí thuê</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput3">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput4" class="form-label">Số lượng người tối
+                        đa</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput4">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kiểu thuê</label>
+                    <select class="form-control">
+                        <option>Tháng</option>
+                        <option>Năm</option>
+                        <option>Ngày</option>
+                    </select>
+                </div>
+                <div class="mb-3" id="s1" style="display: none">
+                    <label for="s1Input" class="form-label">Tiêu chuẩn phòng</label>
+                    <input type="text" class="form-control" id="s1Input">
+                </div>
+                <div class="mb-3" style="display: none" id="s2">
+                    <label for="s2Input" class="form-label">Mô tả tiện nghi khác</label>
+                    <input type="text" class="form-control" id="s2Input">
+                </div>
+                <div class="mb-3" id="s3" style="display: none">
+                    <label for="s3Input" class="form-label">Diện tích hồ bơi</label>
+                    <input type="text" class="form-control" id="s3Input">
+                </div>
+                <div class="mb-3" id="s4" style="display: none">
+                    <label for="s4Input" class="form-label">Số tầng</label>
+                    <input type="text" class="form-control" id="s4Input">
+                </div>
+                <div class="mb-3" id="s5" style="display: none">
+                    <label for="s5Input" class="form-label">Dịch vụ miễn phí đi kèm</label>
+                    <input type="text" class="form-control" id="s5Input">
+                </div>
+            </form>
 
-</div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+        <video width="100%" muted loop autoplay style="z-index: 0">
+            <source src="../mixkit-white-sand-beach-background-1564.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+
+<!--<div class="container">-->
+<!--    <h2 class="text-center"> Trang thêm mới dịch vụ</h2>-->
+<!--    <form>-->
+<!--        <div class="row">-->
+<!--            <h3 class="text-center mt-5">Chọn loại dịch vụ</h3>-->
+<!--            <select class="form-control" onchange="changeFacility()" id="selectFac">-->
+<!--                <option value="0">None</option>-->
+<!--                <option value="1">Villa</option>-->
+<!--                <option value="2">House</option>-->
+<!--                <option value="3">Room</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-6">-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="exampleFormControlInput1" class="form-label ">Tên dịch vụ</label>-->
+<!--                            <input type="text" class="form-control " id="exampleFormControlInput1">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="exampleFormControlInput2" class="form-label">Diện tích sử dụng</label>-->
+<!--                            <input type="text" class="form-control" id="exampleFormControlInput2">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="exampleFormControlInput3" class="form-label">Chi phí thuê</label>-->
+<!--                            <input type="text" class="form-control" id="exampleFormControlInput3">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label for="exampleFormControlInput4" class="form-label">Số lượng người tối-->
+<!--                                đa</label>-->
+<!--                            <input type="text" class="form-control" id="exampleFormControlInput4">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3">-->
+<!--                            <label class="form-label">Kiểu thuê</label>-->
+<!--                            <select class="form-control">-->
+<!--                                <option>Tháng</option>-->
+<!--                                <option>Năm</option>-->
+<!--                                <option>Ngày</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <div class="mb-3" id="s1" style="display: none">-->
+<!--                            <label for="s1Input" class="form-label">Tiêu chuẩn phòng</label>-->
+<!--                            <input type="text" class="form-control" id="s1Input">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3" style="display: none" id="s2">-->
+<!--                            <label for="s2Input" class="form-label">Mô tả tiện nghi khác</label>-->
+<!--                            <input type="text" class="form-control" id="s2Input">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3" id="s3" style="display: none">-->
+<!--                            <label for="s3Input" class="form-label">Diện tích hồ bơi</label>-->
+<!--                            <input type="text" class="form-control" id="s3Input">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3" id="s4" style="display: none">-->
+<!--                            <label for="s4Input" class="form-label">Số tầng</label>-->
+<!--                            <input type="text" class="form-control" id="s4Input">-->
+<!--                        </div>-->
+<!--                        <div class="mb-3" id="s5" style="display: none">-->
+<!--                            <label for="s5Input" class="form-label">Dịch vụ miễn phí đi kèm</label>-->
+<!--                            <input type="text" class="form-control" id="s5Input">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <button class="btn btn-primary" type="submit">Lưu</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--    <div>-->
+<!--        <video width="100%" muted loop autoplay style="z-index: 0">-->
+<!--            <source src="../mixkit-white-sand-beach-background-1564.mp4" type="video/mp4">-->
+<!--        </video>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
 <script>
     changeFacility();
