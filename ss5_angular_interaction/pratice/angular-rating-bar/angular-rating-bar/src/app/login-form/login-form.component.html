@@ -1,0 +1,19 @@
+<form [formGroup]="login" (ngSubmit)="getLogin()">
+  <h2>Login</h2>
+  <p>Email</p>
+  <input type="text" formControlName="email">
+  <p style="color: red" *ngIf="login.controls.email.hasError('email') && login.controls.email.touched">
+    Email sai dinh dang
+  </p>
+  <p style="color: red" *ngIf="login.controls.email.hasError('required') && login.controls.email.touched">
+    Email khong duoc de trong
+  </p>
+  <p>Password</p>
+  <input type="password" formControlName="password">
+  <p style="color: red" *ngIf="login.controls.password.hasError('required') && login.controls.password.touched">
+    Password ko dc de trong
+  </p>
+  <p style="color: red" *ngIf="login.controls.password.hasError('invalidPassword') && login.controls.password.touched">
+    Password phai nhap >=6 ki tu
+  </p>
+</form>

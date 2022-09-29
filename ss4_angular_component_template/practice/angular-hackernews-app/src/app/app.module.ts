@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './component/article/article.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LikeComponent } from './component/like/like.component';
 import { NavComponent } from './component/nav/nav.component';
 import { FootComponent } from './component/foot/foot.component';
+import { TodoComponent } from './component/todo/todo.component';
+import { TestingComponent } from './component/testing/testing.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { FootComponent } from './component/foot/foot.component';
     ArticleComponent,
     LikeComponent,
     NavComponent,
-    FootComponent
+    FootComponent,
+    TodoComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

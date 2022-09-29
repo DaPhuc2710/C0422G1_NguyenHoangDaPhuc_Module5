@@ -1,0 +1,82 @@
+<form [formGroup]="registerFormReactive" (ngSubmit)="createRegisterWithReactive()">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input formControlName="email" name="email" type="text" class="form-control" id="email">
+    <p *ngIf="registerFormReactive.controls.email.hasError('required') && registerFormReactive.controls.email.touched">
+      Can not be
+      empty</p>
+    <p *ngIf="registerFormReactive.controls.email.hasError('email') && registerFormReactive.controls.email.touched">
+      Wrong format</p>
+  </div>
+
+  <div formGroupName="pass" class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input formControlName="password" name="password" type="password" class="form-control" id="password">
+    <p
+      *ngIf="registerFormReactive.controls.pass.controls.password.hasError('required') && registerFormReactive.controls.password.touched">
+      Can not be
+      empty</p>
+    <p
+      *ngIf="registerFormReactive.controls.password.hasError('minlength') && registerFormReactive.controls.password.touched">
+      Need to have 6
+      letters</p>
+    <label for="password" class="form-label"> Confirm Password</label>
+    <input formControlName="checkPassword" name=" confirmPassword" type=" confirmPassword" class="form-control"
+           id=" confirmPassword">
+    <p
+      *ngIf="registerFormReactive.controls. confirmPassword.hasError('required') && registerFormReactive.controls.checkPassword.touched">
+      Can not be
+      empty</p>
+    <p
+      *ngIf="registerFormReactive.controls. confirmPassword.hasError('minlength') && registerFormReactive.controls.checkPassword.touched">
+      Need to have 6
+      letters</p>
+  </div>
+
+  <div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <select formControlName="country" name="country" class="form-control" id="country">
+      <ng-container *ngFor="let country of countries">
+        <option [value]="country">{{country.countryName}}</option>
+      </ng-container>
+    </select>
+    <p
+      *ngIf="registerFormReactive.controls.country.hasError('required') && registerFormReactive.controls.country.touched">
+      Can not be
+      empty</p>
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input formControlName="age" name="age" type="text" class="form-control" id="age">
+    <p
+      *ngIf="registerFormReactive.controls.age.hasError('required') && registerFormReactive.controls.age.touched">Can
+      not be empty</p>
+    <p
+      *ngIf="registerFormReactive.controls.age.hasError('minlength') && registerFormReactive.controls.age.touched">
+      you must be 18
+      above</p>
+    <p
+      *ngIf="registerFormReactive.controls.age.hasError('min') && registerFormReactive.controls.age.touched">you must
+      be 18 above</p>
+  </div>
+  <div class="mb-3">
+    <label for="male" class="form-label">Male</label>
+    <input formControlName="sex" name="sex" type="radio" value="male" class="form-check-input" id="male">
+    <label for="female" class="form-label">Female</label>
+    <input formControlName="sex" name="sex" type="radio" value="female" class="form-check-input" id="female">
+    <p
+      *ngIf="registerFormReactive.controls.sex.hasError('required') && registerFormReactive.controls.sex.touched">Can
+      not be empty</p>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone number</label>
+    <input formControlName="phone" name="phone" type="text" class="form-control" id="phone">
+    <p
+      *ngIf="registerFormReactive.controls.phone.hasError('required') && registerFormReactive.controls.phone.touched">
+      Can not be empty</p>
+    <p
+      *ngIf="registerFormReactive.controls.phone.hasError('pattern') && registerFormReactive.controls.phone.touched">
+      your number should be like this +84XXXXXXXXX</p>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
