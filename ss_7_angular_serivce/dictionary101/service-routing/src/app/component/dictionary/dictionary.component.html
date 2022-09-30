@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Word</th>
+    <th>Detail</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let dictionary of dictionaries">
+    <td>{{dictionary.word}}</td>
+    <td>
+      <button [routerLink]="['detail',dictionary.word]"><i class="fa-solid fa-folder"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
