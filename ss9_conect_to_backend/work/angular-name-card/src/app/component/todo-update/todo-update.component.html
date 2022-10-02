@@ -1,0 +1,12 @@
+<h2>Trang update todo</h2>
+<form [formGroup]="todoForm" (ngSubmit)="update()">
+<div>
+  <label>ID</label>
+  <input type="text" readonly formControlName="id">
+</div>
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name">
+  </div>
+  <button type="submit">Save</button>
+</form>

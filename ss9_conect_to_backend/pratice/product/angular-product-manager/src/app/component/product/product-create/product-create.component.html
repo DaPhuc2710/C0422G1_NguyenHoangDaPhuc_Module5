@@ -1,0 +1,23 @@
+<h2>Trang thêm mới sản phẩm</h2>
+<form [formGroup]="productForm" (ngSubmit)="posting()">
+  <table>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td><select formControlName="category" >
+        <option *ngFor=" let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+      </select></td>
+      <td><button>Tạo mới</button></td>
+    </tr>
+  </table>
+</form>

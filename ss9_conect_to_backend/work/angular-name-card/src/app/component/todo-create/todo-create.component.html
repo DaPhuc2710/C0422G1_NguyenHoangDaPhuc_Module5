@@ -1,0 +1,14 @@
+<h2>Trang thêm mới todo</h2>
+<form [formGroup]="todoForm" (ngSubmit)="posting()">
+  <table>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+    <td>
+      <button>Tạo mới</button>
+    </td>
+    </tr>
+  </table>
+</form>

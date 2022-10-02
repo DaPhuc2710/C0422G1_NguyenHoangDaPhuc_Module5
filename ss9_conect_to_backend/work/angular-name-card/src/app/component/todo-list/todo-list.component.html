@@ -1,0 +1,15 @@
+<a [routerLink]="['create']"> thêm mới</a>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Delete</th>
+    <th>Update</th>
+  </tr>
+  <tr *ngFor="let t of todo">
+    <td>{{t.id}}</td>
+    <td>{{t.name}}</td>
+    <td><button type="button" (click)="delete(t.id)">delete</button></td>
+    <td><button type="button" [routerLink]="['update',t.id]">Update</button></td>
+  </tr>
+</table>

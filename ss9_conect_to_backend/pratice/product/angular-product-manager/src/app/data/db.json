@@ -1,0 +1,17 @@
+{
+  "products": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Nước giải khát"
+    },
+    {
+      "id": 2,
+      "name": "Thực phẩm"
+    },
+    {
+      "id": 3,
+      "name": "Thuốc lá"
+    }
+  ]
+}
