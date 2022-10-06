@@ -1,0 +1,37 @@
+
+Câu 1: HttpClientModule
+Http Client là một Service Module(*) được cung cấp bởi Angular giúp chúng ta thực hiện những yêu cầu Http, 
+dễ dàng custom các request option và handle error một cách dễ dàng.
+Bản chất nó được gọi là Service Module vì nó chỉ init các services (http client, http backend, etc) 
+và không export bất cứ component hay directive nào.
+
+
+Để sử dụng được HTTP Client ta làm các bước sau:
+
+Bước 1. Khai báo HttpClientModule trong app.module
+Bước 2 : Inject HttpClient vào Service nơi sẽ gọi các webservice bên ngoài thông qua constructor
+Bước 3 : Thực hiện các phương thức gọi ra bên ngoài. Chúng ta có thể gọi phương thức protocol là get, push, delete , update.
+ Thông qua phương thức HttpClient.get
+
+
+Câu 2: Observable và Promise?
+
+Sử dụng Observable trong Angular để quản lý các dữ liệu bất đồng bộ. 
+Ví dụ như mình gọi một webservice ở bên ngoài, sau khi kết thúc thì nó trả về đối tượng Observable cho mình.
+Observable quản lý các đối tượng subscribes, khi có một sự thay đổi thì Observable sẽ thông báo đến các subscribers của mình.
+Trong Angular chúng ta sử dụng Obserable từ thư viện RxJS.
+ Thư viện này cung cấp cho chúng ta một số phương thức như map , filter, take, merge kết quả của webservice gọi về.
+
+
+Có rất nhiều điểm khác nhau giữa Observable và Promise.
+
+Mặc dù Observable được khởi tạo, nhưng điều đó không có nghĩa là nó thực thi ngay lập tức.
+Nó sẽ không bao giờ được thực thi nếu như chưa được đăng ký. Còn Promise thì lại khác, nó được thực thi ngay khi nó được khởi tạo. 
+Chính điều này khiến Observable có lợi thế hơn khi làm việc với bất đồng bộ.
+
+Observable có thể chứa được nhiều giá trị trong nó, còn Promise thì không. 
+Observable giống như một array, còn Promise giống như một giá trị đơn. 
+Và điều đó khiến Observable linh động hơn trong việc lưu trữ dữ liệu so với Promise. 
+Bên cạnh đó Observable cũng chính là một dòng chảy (stream), và dòng chảy này được thay đổi theo thời gian. 
+Chúng ta có thể truyền bất cứ giá trị nào vào dòng chảy đó và ngay lập tức Observable sẽ emit cho chúng ta giá trị mới.
+

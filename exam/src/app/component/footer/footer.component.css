@@ -1,0 +1,28 @@
+h2 {
+  color: #8EE324;
+}
+#footer {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+h3 {
+  font-family: "Times New Roman", serif;
+  color: #E3D339;
+}
+
+#ul1 {
+  color: #707070;
+}
+
+a {
+  text-decoration: none;
+  color: #707070;
+}
+
+#a1, #a2 {
+  text-decoration: none;
+  color: #b6d4fe;
+}
+
+#icons {
+  color: #1e2125;
+}

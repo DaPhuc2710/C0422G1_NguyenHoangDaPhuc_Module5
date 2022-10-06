@@ -1,9 +1,9 @@
-#needBg {
-  background-image: url("https://images.unsplash.com/photo-1542931415-162aeab4418f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w4Njc3OTc2fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");
-}
+/*#needBg {*/
+/*  background-image: url("https://images.unsplash.com/photo-1542931415-162aeab4418f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w4Njc3OTc2fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");*/
+/*}*/
 body{
   background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
 }
 #heading{
-  color: floralwhite;
+  color: blueviolet;
 }

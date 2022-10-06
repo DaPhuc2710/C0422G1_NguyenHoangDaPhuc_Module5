@@ -1,4 +1,4 @@
-<a [routerLink]="['create']">Thêm mới sản phẩm</a>
+<a [routerLink]="['create']">trang chỉnh sửa</a>
 <table>
   <tr>
     <th>STT</th>
@@ -6,8 +6,8 @@
     <th>Giá</th>
     <th>Mô tả</th>
     <th>Thể loại</th>
-    <th>Chỉnh sửa</th>
     <th>Xóa</th>
+    <th>Chỉnh sửa</th>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{product.id}}</td>
@@ -16,6 +16,6 @@
     <td>{{product.description}}</td>
     <td>{{product.category.name}}</td>
     <td><button type="button" (click)="delete(product.id)">Xóa</button></td>
-    <td><button type="button" [routerLink]="['/update',product.id]" >Xóa</button></td>
+    <td><button type="button" [routerLink]="['update',product.id]" >update</button></td>
   </tr>
 </table>

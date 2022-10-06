@@ -14,10 +14,14 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
-      <td><select formControlName="category" >
-        <option *ngFor=" let cate of categories" [ngValue]="cate">{{cate.name}}</option>
-      </select></td>
-      <td><button>Tạo mới</button></td>
+      <td>
+        <select formControlName="category">
+          <option *ngFor=" let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+        </select>
+      </td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
     </tr>
   </table>
 </form>

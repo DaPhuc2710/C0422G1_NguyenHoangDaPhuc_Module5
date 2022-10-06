@@ -1,0 +1,99 @@
+{
+  "customers": [
+    {
+      "id": 6,
+      "name": "rưerwer",
+      "dateOfBirth": "2022-10-13",
+      "gender": "Nam",
+      "idNumber": "435435354",
+      "phone": "53453545",
+      "email": "fsdfsdf@gmail.com",
+      "address": "ưdwer2eweq",
+      "customerType": {
+        "id": 3,
+        "typeName": "Gold"
+      }
+    },
+    {
+      "id": 7,
+      "name": "rưerwer",
+      "dateOfBirth": "2022-10-13",
+      "gender": "Nam",
+      "idNumber": "435435354",
+      "phone": "53453545",
+      "email": "fsdfsdf@gmail.com",
+      "address": "ưdwer2eweq",
+      "customerType": {
+        "id": 3,
+        "typeName": "Gold"
+      }
+    },
+    {
+      "id": 8,
+      "name": "rưerewrr",
+      "dateOfBirth": "2022-10-05",
+      "gender": "Nam",
+      "idNumber": "53453455",
+      "phone": "4535345345",
+      "email": "fdfwefwef",
+      "address": "ẻwr232r",
+      "customerType": {
+        "id": 5,
+        "typeName": "Member"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Hà Duyên",
+      "dateOfBirth": "2022-10-07",
+      "gender": "Nam",
+      "idNumber": "5678",
+      "phone": "7yu",
+      "email": "7yu",
+      "address": "hávcxfha",
+      "customerType": {
+        "id": 1,
+        "typeName": "Diamond"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Huy Nguyễn",
+      "dateOfBirth": "2022-10-05",
+      "gender": "Nữ",
+      "idNumber": "3454545",
+      "phone": "345435453",
+      "email": "dpahuc2000@gmail.com",
+      "address": "124234234",
+      "customerType": {
+        "id": 1,
+        "typeName": "Diamond"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "typeName": "Diamond"
+    },
+    {
+      "id": 2,
+      "typeName": "Platinum"
+    },
+    {
+      "id": 3,
+      "typeName": "Gold"
+    },
+    {
+      "id": 4,
+      "typeName": "Silver"
+    },
+    {
+      "id": 5,
+      "typeName": "Member"
+    }
+  ],
+  "profile": {
+    "1": "typicode"
+  }
+}

@@ -1,5 +1,36 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "yyutuyt",
+      "price": 7868676,
+      "description": "uygyug",
+      "category": {
+        "id": 1,
+        "name": "Nước giải khát"
+      }
+    },
+    {
+      "id": 2,
+      "name": "tuttut",
+      "price": 687678687,
+      "description": "bjkj",
+      "category": {
+        "id": 1,
+        "name": "Nước giải khát"
+      }
+    },
+    {
+      "id": 3,
+      "name": "ALO",
+      "price": 687687,
+      "description": "bkbjbkjb",
+      "category": {
+        "id": 2,
+        "name": "Thực phẩm"
+      }
+    }
+  ],
   "categories": [
     {
       "id": 1,

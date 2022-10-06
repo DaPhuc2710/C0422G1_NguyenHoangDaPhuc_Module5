@@ -1,16 +1,13 @@
 <div id="makeBG">
   <h2 style="text-align: center;">Trang thêm mới khách hàng</h2>
-  <form class="w-50 container-fluid mt-3 shadow bg-light">
+  <form class="w-50 container-fluid mt-3 shadow bg-light" [formGroup]="customerForm" *ngIf="customerForm"
+        (ngSubmit)="create()">
     <div class="row">
       <div class="col-12">
         <div class="mb-4">
           <label class="form-label mt-3 text-success fw-bold">Chọn loại khách hàng</label>
-          <select class="form-control">
-            <option value="1">Diamond</option>
-            <option value="2">Platinium</option>
-            <option value="3">Gold</option>
-            <option value="4">Silver</option>
-            <option value="5">Member</option>
+          <select class="form-control" formControlName="customerType">
+            <option *ngFor="let type of customerTypes" [ngValue]="type">{{type.typeName}}</option>
           </select>
         </div>
       </div>
@@ -19,40 +16,42 @@
       <div class="col-12">
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Họ tên </label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="name">
+          <p *ngIf="customerForm.controls.name.hasError('pattern') &&customerForm.controls.name.touched " style="color: red">Tên chưa đúng định dạng  </p>
+          <p *ngIf="customerForm.controls.name.hasError('required') &&customerForm.controls.name.touched " style="color: red">Tên  chưa điền </p>
         </div>
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Ngày sinh</label>
-          <input type="date" class="form-control" aria-describedby="emailHelp">
+          <input type="date" class="form-control" aria-describedby="emailHelp" formControlName="dateOfBirth">
         </div>
 
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Giới tính</label>
-          <select class="form-control">
-            <option value="1">Nam</option>
-            <option value="2">Nữ</option>
-          </select>>
+          <select class="form-control" formControlName="gender">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+          </select>
         </div>
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Số CMND</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="idNumber">
         </div>
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Số Điện Thoại</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="phone">
         </div>
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Email</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="email">
         </div>
         <div class="mb-3">
           <label class="form-label text-success fw-bold">Địa chỉ </label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="address">
         </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit"  class="btn btn-primary">Save</button>
     </div>
   </form>
 </div>

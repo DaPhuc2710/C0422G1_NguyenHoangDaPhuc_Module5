@@ -1,1 +1,24 @@
-<p>product-update works!</p>
+<h2>Trang thêm Chinh sua </h2>
+<form [formGroup]="newUpdateProduct" (ngSubmit)="update()" *ngIf="newUpdateProduct">
+  <table>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td><select formControlName="category" >
+        <option *ngFor=" let cate of categories" [ngValue]="cate.id">{{cate.name}}</option>
+      </select></td>
+      <td><button>Save</button></td>
+    </tr>
+  </table>
+</form>
+

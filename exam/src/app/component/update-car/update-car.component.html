@@ -1,0 +1,62 @@
+<div id="makeBG">
+  <h2 style="text-align: center;">Cập Nhập thông tin</h2>
+  <form class="w-50 container-fluid mt-3 shadow bg-light" [formGroup]="carHomeUpdate" *ngIf="carHomeUpdate"
+        (ngSubmit)="update(id)">
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-4">
+          <label class="form-label mt-3 text-success fw-bold"> Biển sổ xe</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="plate">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-4">
+          <label class="form-label mt-3 text-success fw-bold">Loại Xe</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="carType">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Tên nhà xe</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Điểm đi</label>
+          <select class="form-control" formControlName="startDestination">
+            <option *ngFor="let sd of startDestination" [ngValue]="sd.id">{{sd.name}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Điểm đến</label>
+          <select class="form-control" formControlName="endDestination">
+            <option *ngFor="let ed of endDestination" [ngValue]="ed.id">{{ed.name}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Số Điện Thoại</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="phone">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Email</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Giờ đi</label>
+          <input type="time" class="form-control" aria-describedby="emailHelp" formControlName="timeGo">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-success fw-bold">Giờ đến</label>
+          <input type="time" class="form-control" aria-describedby="emailHelp" formControlName="timeEnd">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
+

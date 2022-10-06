@@ -27,6 +27,6 @@ export class ProductService {
 
   }
   updateProduct(id:number, product: Product): Observable<any> {
-    return this.httpClient.put('http://localhost:3000/product/' + id, product);
+    return this.httpClient.put('http://localhost:3000/products/' + id, product);
   }
 }

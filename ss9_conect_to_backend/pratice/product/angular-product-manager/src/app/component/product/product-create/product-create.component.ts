@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ProductService} from "../../../service/product.service";
 import {CategoryService} from "../../../service/category.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {Category} from "../../../../model/category";
 
 @Component({
@@ -24,10 +24,9 @@ export class ProductCreateComponent implements OnInit {
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
               private route: Router) {
-    categoryService.getAll().subscribe(next =>{
-      this.categories=next
+    categoryService.getAll().subscribe(next => {
+      this.categories = next;
     })
-
   }
 
   ngOnInit(): void {
@@ -36,7 +35,7 @@ export class ProductCreateComponent implements OnInit {
 
   posting() {
     this.productService.addProduct(this.productForm.value).subscribe(next => {
-      this.route.navigateByUrl("")
+      this.route.navigateByUrl("/customer/list")
     })
   }
 }
