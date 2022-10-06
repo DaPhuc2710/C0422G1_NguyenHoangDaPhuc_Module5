@@ -40,6 +40,10 @@ export class CarHomeService {
     return this.httpClient.get<CarHome>('http://localhost:8080/goFindById/' + id);
   }
 
+  findByName(name: string): Observable<CarHome[]> {
+    return this.httpClient.get<CarHome[]>('http://localhost:8080/goFindByName/' + name);
+  }
+
   updateCar(id: number, carHome: CarHome) {
     return this.httpClient.put('http://localhost:3000/carHome/' + id, carHome);
   }

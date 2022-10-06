@@ -14,8 +14,8 @@ export class CarHomeListComponent implements OnInit {
   carHomes: CarHome[] = [];
   id: number;
   carHomeInfor: CarHome;
-  startDestination: StartDestinaion[]=[];
-  endDestination: EndDestination[]=[];
+  startDestination: StartDestinaion[] = [];
+  endDestination: EndDestination[] = [];
   p: number = 1;
 
   constructor(private  carHomeService: CarHomeService) {
@@ -46,6 +46,9 @@ export class CarHomeListComponent implements OnInit {
 
 
   search(name: string) {
-    
+    this.carHomeService.findByName(name).subscribe(next => {
+      this.carHomes = next;
+    });
+
   }
 }
