@@ -16,25 +16,25 @@ public interface CarHomeRepository extends JpaRepository<CarHome, Integer> {
     @Query(value = "SELECT * FROM car_home where statuss=0", nativeQuery = true)
     Page<CarHome> findAll(Pageable pageable);
 
-    @Modifying // thực hiện nv nào đó thì k bị lỗi
+    @Modifying // thực hiện nv nào đó k trả về void
     @Query(value = "delete from car_home where id= :id", nativeQuery = true)
     void deleteId(@Param("id") Integer id);
 
     @Query(value = "select * from car_home where `name`=:name", nativeQuery = true)
     List<CarHome> getByName(@Param("name") String name);
 
-//    @Modifying
-//    @Query(value = "update car_home as c set \n" +
-//            "c.car_type= 'Giường nằm',\n" +
-//            "c.email='Duyen2000@gmail.com',\n" +
-//            "c.`name`='Mai Linh',\n" +
-//            "c.phone='0905922225',\n" +
-//            "c.plate=1236,\n" +
-//            "c.time_end='10:30',\n" +
-//            "c.time_go='12:30',\n" +
-//            "c.id_end=2,\n" +
-//            "c.id_start=3\n" +
-//            "where c.id=2;", nativeQuery = true)
-//    updateCarHome(@Param("id") Integer id);
+    @Modifying
+    @Query(value = "update car_home as c set \n" +
+            "c.car_type= :car_type,\n" +
+            "c.email=:email,\n" +
+            "c.`name`=:name,\n" +
+            "c.phone=:phone,\n" +
+            "c.plate=:plate,\n" +
+            "c.time_end=:time_end,\n" +
+            "c.time_go=:time_go,\n" +
+            "c.id_end=:id_end,\n" +
+            "c.id_start=:id_start\n" +
+            "where c.id=:id", nativeQuery = true)
+     void updateCarHome(@Param("id") Integer id);
 
 }

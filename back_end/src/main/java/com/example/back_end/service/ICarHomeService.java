@@ -10,5 +10,6 @@ public interface ICarHomeService {
     Page<CarHome> findAll(Pageable pageable);
     void delete(Integer id);
     List<CarHome> findByName(String name);
+    void update(Integer id);
 
 }

@@ -30,5 +30,10 @@ public class CarHomeService implements ICarHomeService {
         return carHomeRepository.getByName(name);
     }
 
+    @Override
+    public void update(Integer id) {
+        carHomeRepository.updateCarHome(id);
+    }
+
 
 }

@@ -1,0 +1,9 @@
+<form [formGroup]="formCreate" (ngSubmit)="createSubmit()">
+  <label>Id</label>
+  <input type="text" formControlName="id">
+  <label>Name</label>
+  <input type="text" formControlName="name">
+  <label>File</label>
+  <input type="file" formControlName="img" (change)="upload($event)">
+  <button type="submit">Thêm mới</button>
+</form>

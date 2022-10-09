@@ -70,4 +70,10 @@ public class CarHomeController {
         return new ResponseEntity<List<CarHome>>(carHome, HttpStatus.OK);
     }
 
+    @GetMapping("/goUpdateCar/{id}")
+    public ResponseEntity<CarHome> update(@PathVariable Integer id) {
+        this.iCarHomeService.update(id);
+        return new ResponseEntity<CarHome>(HttpStatus.OK);
+    }
+
 }

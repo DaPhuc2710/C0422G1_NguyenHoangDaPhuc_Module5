@@ -1,0 +1,9 @@
+<form [formGroup]="personForm" (ngSubmit)="createSubmit()">
+  <P>Id</P>
+  <input type="text" formControlName="id">
+  <P>Name</P>
+  <input type="text" formControlName="name">
+  <P>ImgURL</P>
+  <input type="file" formControlName="imgUrl" (change)="upload($event)">
+  <button type="submit">Thêm mới</button>
+</form>

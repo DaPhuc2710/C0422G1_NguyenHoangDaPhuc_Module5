@@ -16,7 +16,7 @@ export class CustomerListComponent implements OnInit {
   p: number = 1;
 
 
-  constructor(private customerService: CustomerService, private toast: Toast) {
+  constructor(private customerService: CustomerService) {
     this.customerService.getAllTypeCustomer().subscribe(data => {
       this.customerType = data
     })
